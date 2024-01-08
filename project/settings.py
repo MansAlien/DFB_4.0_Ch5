@@ -61,7 +61,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates','static'],
+        'DIRS': [BASE_DIR/ "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,16 +126,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR/'static',]
-STATIC_ROOT = BASE_DIR/'staticfiles'
+# STATICFILES_DIRS = [BASE_DIR/'static',]
+# STATIC_ROOT = BASE_DIR/'staticfiles'
 
 # STATICFILES_DIRS = [BASE_DIR/ 'static']
 # STATIC_ROOT = BASE_DIR / "staticfiles"
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
